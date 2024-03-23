@@ -1,0 +1,13 @@
+#table1{
+    border-collapse: collapse;
+    width: 100%;
+}
+.th-table1 {
+    background-color: #000000;
+    color: white;
+  }
+.th-table1, .td-table1 {
+    text-align: left;
+     padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
