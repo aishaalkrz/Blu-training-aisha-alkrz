@@ -12,4 +12,10 @@ import { UiModule } from '../../projects/ui/src/public-api';
 })
 export class AppComponent {
   title = 'project-angular';
+  columns_name: string[] = ['FirstName', 'LastName', 'Email'];
+  rows_value: any[] = [
+    { FirstName: 'John', LastName: 'Doe', Email: 'john@example.com' },
+    { FirstName: 'Mary', LastName: 'Moe', Email: 'mary@example.com' },
+    { FirstName: 'July', LastName: 'Dooley', Email: 'july@example.com' }
+  ];
 }

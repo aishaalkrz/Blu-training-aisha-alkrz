@@ -1,5 +1,28 @@
+<table id="table1">
+    <thead>
+      <tr>
+        <th  *ngFor="let name_column of columns" class="th-table1">{{name_column}}</th>
 
-<lib-table-black></lib-table-black>
-
-
-<lib-table-baby-green></lib-table-baby-green>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let value_row of rows" >
+        <td *ngFor="let name_column of columns" class="td-table1">{{value_row[name_column]}}</td>
+    
+      </tr>
+    </tbody>
+</table>
+  
+<table id="table2">
+    <thead>
+      <tr>
+        <th *ngFor="let name_column of columns" class="th-table2">{{name_column}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let value_row of rows" >
+        <td *ngFor="let name_colum of columns" class="td-table2">{{value_row[name_colum]}}</td>
+      </tr>
+ 
+    </tbody>
+  </table> 
