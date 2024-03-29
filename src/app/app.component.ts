@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { UiModule } from '../../projects/ui/src/public-api';
-import { PipesModule } from '../../projects/pipes/src/lib/pipes.module';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,UiModule,PipesModule],
+  imports: [CommonModule, RouterOutlet,UiModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

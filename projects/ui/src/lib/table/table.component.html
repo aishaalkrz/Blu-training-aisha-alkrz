@@ -1,28 +1,43 @@
-<table id="table1">
-    <thead>
-      <tr>
-        <th  *ngFor="let name_column of columns" class="th-table1">{{name_column}}</th>
+<div class="contianer">
 
+    <div class="search-container">
+        <input class="search-first" type="text" [(ngModel)]="searchText.firstName" placeholder=" filter on First Name" />
+        <input class="search-last" type="text" [(ngModel)]="searchText.lastName" placeholder=" filter on Last Name" />
+        <input class="search-email" type="text" [(ngModel)]="searchText.email" placeholder=" filter on Email" />
+        
+      </div>
+  <table id="table1">
+    <thead>
+      
+      <tr>
+        <th *ngFor="let name_column of columns" class="th-table1">
+          {{ name_column }}
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let value_row of rows" >
-        <td *ngFor="let name_column of columns" class="td-table1">{{value_row[name_column]}}</td>
-    
+      <tr *ngFor="let value_row of rows! | filter :'FirstName': searchText.firstName | filter :'LastName': searchText.lastName | filter :'Email': searchText.email">
+        <td *ngFor="let name_column of columns" class="td-table1">
+          {{ value_row[name_column] }}
+        </td>
       </tr>
     </tbody>
-</table>
-  
-<table id="table2">
+  </table>
+
+  <table id="table2">
     <thead>
       <tr>
-        <th *ngFor="let name_column of columns" class="th-table2">{{name_column}}</th>
+        <th *ngFor="let name_column of columns" class="th-table2">
+          {{ name_column }}
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let value_row of rows" >
-        <td *ngFor="let name_colum of columns" class="td-table2">{{value_row[name_colum]}}</td>
+      <tr *ngFor="let value_row of rows! | filter :'FirstName': searchText.firstName | filter :'LastName': searchText.lastName | filter :'Email': searchText.email">
+        <td *ngFor="let name_colum of columns" class="td-table2">
+          {{ value_row[name_colum] }}
+        </td>
       </tr>
- 
     </tbody>
   </table> 
+</div>
