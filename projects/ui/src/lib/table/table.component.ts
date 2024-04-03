@@ -7,16 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class TableComponent implements OnInit {
-
-
-
-  @Input() columns: string[] | undefined;
+  @Input() columns! : string[] ;
   @Input() rows: any[] | undefined;
   searchText: any = { firstName: '', lastName: '', email: '' };
-
-
-  
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }
