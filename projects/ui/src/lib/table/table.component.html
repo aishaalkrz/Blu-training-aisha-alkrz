@@ -25,7 +25,12 @@
       </ng-container>   
     </div>
 
+<!-- test pipe render
 <div>
-  <p>{{ inputValue | preRender:'yes' |preRender:'no'}}</p>
-  <p>{{ numericValue | preRender:'currency' }}</p>
+  <p>The number : {{number | preRender:'yes' | preRender :'no'}}</p>
+  <p>The number : {{currency | preRender:'currency'}}</p>
+  <p>Text Letter Small : {{ "HELLO WORLD" | preRender:'lowercase' }}</p>
+  <p>Text Letter Big : {{ "hello world" | preRender:'uppercase' }}</p>
+  <p>{{ text | preRender:'camelcase' }}</p>
 </div>
+ -->

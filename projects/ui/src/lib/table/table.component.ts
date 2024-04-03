@@ -11,7 +11,9 @@ export class TableComponent implements OnInit {
   @Input() rows: any[] | undefined;
   searchText : string = '' ;
   //searchText: any = { firstName: '', lastName: '', email: '' };
-  inputValue:number = 1;
-  numericValue : number = 100.7;
   ngOnInit(): void {}    
+
+  number = '1';
+  currency  = '107';
+  text = "some-formatted-text";
 }
