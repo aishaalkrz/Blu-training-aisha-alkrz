@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TableComponent implements OnInit {
   @Input() columns! : string[] ;
   @Input() rows: any[] | undefined;
-  searchText: any = { firstName: '', lastName: '', email: '' };
-  ngOnInit(): void {}
+  searchText : string = '' ;
+  //searchText: any = { firstName: '', lastName: '', email: '' };
+  ngOnInit(): void {}    
 }

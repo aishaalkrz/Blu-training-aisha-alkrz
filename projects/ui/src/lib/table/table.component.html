@@ -1,67 +1,29 @@
 <div class="contianer">
-  <div class="search-container">
-    <input
-      class="search-first"
-      type="text"
-      [(ngModel)]="searchText.firstName"
-      placeholder=" filter on First Name"
-    />
-    <input
-      class="search-last"
-      type="text"
-      [(ngModel)]="searchText.lastName"
-      placeholder=" filter on Last Name"
-    />
-    <input
-      class="search-email"
-      type="text"
-      [(ngModel)]="searchText.email"
-      placeholder=" filter on Email"
-    />
-  </div>
-  <ng-container *ngIf="rows">
-    <ng-container *ngFor="let table of [1, 2]">
-      <table id=" table{{ table }}" class="table1">
-        <thead>
-          <tr>
-            <th *ngFor="let name_column of columns" class="th-table1">
-              {{ name_column }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            *ngFor="
-              let value_row of rows
-                | filter : 'FirstName' : searchText.firstName
-                | filter : 'LastName' : searchText.lastName
-                | filter : 'Email' : searchText.email
-            "
-          >
-            <td *ngFor="let name_column of columns" class="td-table1">
-              {{ value_row[name_column] }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </ng-container>
-  </ng-container>
-</div>
 
-<!-- 
-  <table id="table2">
-    <thead>
-      <tr>
-        <th *ngFor="let name_column of columns" class="th-table2">
-          {{ name_column }}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let value_row of rows! | filter :'FirstName': searchText.firstName | filter :'LastName': searchText.lastName | filter :'Email': searchText.email">
-        <td *ngFor="let name_colum of columns" class="td-table2">
-          {{ value_row[name_colum] }}
-        </td>
-      </tr>
-    </tbody>
-  </table>  -->
+    <div class="search-container">
+        <input class="search-input" type="text" [(ngModel)]="searchText" placeholder=" filter on data" /> 
+      </div>
+      <ng-container *ngIf="rows">
+        <ng-container *ngFor="let table of [1, 2]">
+          <table id=" table{{ table }}" class="table1">
+            <thead>
+              <tr>
+                <th *ngFor="let name_column of columns" class="th-table1">
+                  {{ name_column }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let value_row of rows | filter : searchText">
+                <td *ngFor="let name_column of columns" class="td-table1">
+                  {{ value_row[name_column] }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </ng-container>   
+    </div>
+
+
+

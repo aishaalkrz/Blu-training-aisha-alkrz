@@ -19,4 +19,6 @@ export class AppComponent {
     { FirstName: 'Mary', LastName: 'Moe', Email: 'mary@example.com' },
     { FirstName: 'July', LastName: 'Dooley', Email: 'july@example.com' }
   ];
+
+  
 }
