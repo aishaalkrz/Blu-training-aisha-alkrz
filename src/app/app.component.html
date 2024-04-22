@@ -2,3 +2,6 @@
 <lib-table [columns]="columns_name" [rows]="rows_value" [customTemplate]="ButtonTemplate"></lib-table>
 
 
+<ng-template #Button let-data>
+  <button class="button-primary"> {{ data }}</button>
+</ng-template>
