@@ -10,8 +10,7 @@ import { UiModule } from '../../projects/ui/src/public-api';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  @ViewChild('Button') ButtonTemplate!: TemplateRef<any>;
-
+  title = 'project-angular';
   columns_name: string[] = ['FirstName', 'LastName', 'Email'];
   rows_value: any[] = [
     { FirstName: 'John', LastName: 'Doe', Email: 'john@example.com' },
