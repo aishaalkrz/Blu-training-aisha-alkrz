@@ -1,19 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
+  
   selector: 'lib-table',
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css'
+  styleUrls: ['./table.component.css']
 })
-
 export class TableComponent implements OnInit {
-  @Input() columns! : string[] ;
+  @Input() columns: string[] | undefined;
   @Input() rows: any[] | undefined;
-  searchText : string = '' ;
-  //searchText: any = { firstName: '', lastName: '', email: '' };
-  ngOnInit(): void {}    
+  searchText: string = '';
 
-  number = '1';
-  currency  = '107';
-  text = "some-formatted-text";
+  ngOnInit(): void {}
+
+  @Input() customTemplate!: TemplateRef<any>;
 }
