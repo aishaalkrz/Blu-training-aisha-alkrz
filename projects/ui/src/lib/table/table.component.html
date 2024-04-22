@@ -19,7 +19,14 @@
         </thead>
         <tbody>
           <tr *ngFor="let value_row of rows | filter : searchText">
-            <td *ngFor="let name_column of columns" class="td-table1">{{value_row[name_column]}}
+            <td *ngFor="let name_column of columns" class="td-table1">
+              <ng-container *ngIf="customTemplate">
+                <ng-template
+                  [ngTemplateOutlet]="customTemplate"
+                  [ngTemplateOutletContext]="{ $implicit: value_row[name_column] }"
+                >
+                </ng-template>
+              </ng-container>
             </td>
           </tr>
         </tbody>
