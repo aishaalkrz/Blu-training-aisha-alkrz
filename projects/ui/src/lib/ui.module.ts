@@ -16,6 +16,7 @@ import { PreRenderPipe } from '../../../pipes/src/lib/pre-render.pipe';
   imports: [
     CommonModule,
     FormsModule,
+    
   ],
   exports: [UiComponent,TableComponent,FilterPipe,PreRenderPipe ],
   declarations: [UiComponent,TableComponent,FilterPipe,PreRenderPipe ],

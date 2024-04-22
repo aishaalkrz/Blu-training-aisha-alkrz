@@ -1,36 +1,29 @@
 <div class="contianer">
-
-    <div class="search-container">
-        <input class="search-input" type="text" [(ngModel)]="searchText" placeholder=" filter on data" /> 
-      </div>
-      <ng-container *ngIf="rows">
-        <ng-container *ngFor="let table of [1, 2]">
-          <table id=" table{{ table }}" class="table1">
-            <thead>
-              <tr>
-                <th *ngFor="let name_column of columns" class="th-table1">
-                  {{ name_column }}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let value_row of rows | filter : searchText">
-                <td *ngFor="let name_column of columns" class="td-table1">
-                  {{ value_row[name_column] }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </ng-container>
-      </ng-container>   
-    </div>
-
-<!-- test pipe render
-<div>
-  <p>The number : {{number | preRender:'yes' | preRender :'no'}}</p>
-  <p>The number : {{currency | preRender:'currency'}}</p>
-  <p>Text Letter Small : {{ "HELLO WORLD" | preRender:'lowercase' }}</p>
-  <p>Text Letter Big : {{ "hello world" | preRender:'uppercase' }}</p>
-  <p>{{ text | preRender:'camelcase' }}</p>
+  <div class="search-container">
+    <input
+      class="search-input"
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder=" filter on data"
+    />
+  </div>
+  <ng-container *ngIf="rows">
+    <ng-container *ngFor="let table of [1, 2]">
+      <table id=" table{{ table }}" class="table1">
+        <thead>
+          <tr>
+            <th *ngFor="let name_column of columns" class="th-table1">
+              {{ name_column }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let value_row of rows | filter : searchText">
+            <td *ngFor="let name_column of columns" class="td-table1">{{value_row[name_column]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </ng-container>
 </div>
- -->
