@@ -9,7 +9,7 @@
   </div>
   <ng-container *ngIf="rows">
     <ng-container *ngFor="let table of [1, 2]">
-      <table id=" table{{ table }}" class="table1">
+      <table id=" {{ table }}" class="table1">
         <thead>
           <tr>
             <th *ngFor="let name_column of columns" class="th-table1">
@@ -23,8 +23,7 @@
               <ng-container *ngIf="customTemplate">
                 <ng-template
                   [ngTemplateOutlet]="customTemplate"
-                  [ngTemplateOutletContext]="{ $implicit: value_row[name_column] }"
-                >
+                  [ngTemplateOutletContext]="{ $implicit: value_row[name_column] | preRender: 'lowercase' }">
                 </ng-template>
               </ng-container>
             </td>

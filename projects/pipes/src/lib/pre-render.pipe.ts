@@ -23,7 +23,7 @@ export class PreRenderPipe implements PipeTransform {
         case 'no':
           return numText === 0 ? 'No' : text;
         case 'currency':
-          return numText+ ' $';
+          return numText+ '$';
       default:
           return text;
       }
@@ -35,7 +35,7 @@ export class PreRenderPipe implements PipeTransform {
   private toCamelCase(text: string): string {
     return text.replace(/[-_][^-_]/g, (match) => {
       return  match.charAt(1).toUpperCase() ;
-      //OR  return  ' '+match.charAt(1) ;
+      
     });
   }
   
